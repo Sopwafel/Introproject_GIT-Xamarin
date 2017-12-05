@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage"
+             Title="Select Project">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Login" Clicked="OnLoginToolbarClick" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="Start">
+                <Button Text="New Project"
+                    Clicked="OnNewProjectClick"/>
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="Start"
+                         x:Name="ProjectLayout">
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

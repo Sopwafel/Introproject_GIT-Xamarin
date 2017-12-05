@@ -1,0 +1,16 @@
+﻿TODO's:
+ - In Loginpage: 
+	- Actually authenticate with server
+ - In SignupPage: 
+	- Actually make an account on the server
+ - In AddParticipantPage: 
+	- Actually check if the name is correct
+ - In CreateProjectPage: 
+	- Communicate the new project with the server
+ - In Mainpage: 
+	- Make Logout actually do something
+	- Fetch projectlist from server
+ - In Project.cs
+	- Find out what properties projects should have and implement
+ - In ProjectPage
+	- Implement timer elements

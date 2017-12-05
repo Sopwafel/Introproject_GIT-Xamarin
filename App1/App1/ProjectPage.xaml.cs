@@ -17,9 +17,9 @@ namespace App1
 		{
             pr = p;
 			InitializeComponent ();
-            Title = p.name;
+            Title = p.Name;
             Label l;
-            foreach(string name in p.participants)
+            foreach(string name in p.ActivityList)
             {
                 l = new Label();
                 l.Text = name;

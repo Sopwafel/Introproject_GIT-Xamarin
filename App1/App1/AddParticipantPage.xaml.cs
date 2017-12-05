@@ -53,8 +53,8 @@ namespace App1
         async void OnFinalizeButtonClicked(object obj, EventArgs e)
         {
             foreach(string name in names)
-                if(!c.names.Contains(name))
-                    c.names.Add(name);
+                if(!c.activities.Contains(name))
+                    c.activities.Add(name);
             await Navigation.PopAsync();
         }
     }

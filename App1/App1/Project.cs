@@ -33,10 +33,37 @@ namespace App1
                 return activityList;
             }
         }
-        public Project(string name, List<string> names)
+        /// <summary>
+        /// Creates a new project with specified name and no activities.
+        /// </summary>
+        /// <param name="name"></param>
+        public Project(string name)
         {
             this.name = name;
-            participants = names;
+            activityList = new List<String>();
+        }
+        /// <summary>
+        /// Creates a new project with specified name and list of activities.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="activities"></param>
+        public Project(string name, List<string> activities) : this(name)
+        {
+            this.activityList = activities;
+        }
+        /// <summary>
+        /// Copies the data of this instance and returns it as a new Project
+        /// </summary>
+        /// <returns></returns>
+        public Project Copy()
+        {
+            List<string> copy = new List<string>();
+            ActivityList.ForEach((string s) => { copy.Add(s); });
+            return new Project(this.Name, copy);
+        }
+        public override string ToString()
+        {
+            return Name;
         }
         public Label MakeLabel()
         {

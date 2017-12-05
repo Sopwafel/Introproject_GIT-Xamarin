@@ -13,7 +13,7 @@ namespace App1
 	public partial class CreateProjectPage : ContentPage
 	{
         MainPage m;
-        public List<string> names = new List<string>();
+        public List<string> activities = new List<string>();
         public CreateProjectPage (MainPage mp)
 		{
             m = mp;
@@ -26,7 +26,7 @@ namespace App1
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            foreach(string name in names)
+            foreach(string name in activities)
             {
                 Label b;
                 b = new Label();
@@ -34,9 +34,9 @@ namespace App1
                 //This is so you can remove names by tapping
                 var tapGestureRecognizer = new TapGestureRecognizer();
                 tapGestureRecognizer.Tapped += (s, e) => {
-                    Label ding = s as Label;
-                    names.Remove(ding.Text);
-                    LayoutStack.Children.Remove(ding);
+                    Label LabelToRemove = s as Label;
+                    activities.Remove(LabelToRemove.Text);
+                    LayoutStack.Children.Remove(LabelToRemove);
                 };
                 b.GestureRecognizers.Add(tapGestureRecognizer);
                 LayoutStack.Children.Add(b);
@@ -44,7 +44,7 @@ namespace App1
         }
         async void OnFinalizeButtonClicked(object obj, EventArgs e)
         {
-            m.ProjectList.Add(new Project(ProjectName.Text, names));
+            m.ProjectList.Add(new Project(ProjectName.Text, activities));
             await Navigation.PopAsync();
             //TODO: actually communicate with server and make a project
         }

@@ -20,6 +20,10 @@
       <DependentUpon>CreateProjectPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)database\KnopDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)database\Program_DB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)database\ProjectReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)database\SzaboQL.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoginPages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
       <SubType>Code</SubType>

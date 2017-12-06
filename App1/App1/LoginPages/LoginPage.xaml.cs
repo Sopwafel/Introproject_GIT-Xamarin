@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using static App1.App;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using App1.database;
 
 namespace App1
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
+        
         MainPage mn;
 		public LoginPage (MainPage main)
 		{
             mn=main;
-			InitializeComponent ();
+		//	InitializeComponent ();
 		}
 
         /**
@@ -32,8 +33,8 @@ namespace App1
         {
             var user = new User
             {
-                Username = usernameEntry.Text,
-                Password = passwordEntry.Text
+              //  Username = usernameEntry.Text,
+               // Password = passwordEntry.Text
             };
             if(CredentialsCorrect(user))
             {
@@ -44,6 +45,8 @@ namespace App1
         }
         async void OnSignUpButtonClicked(object sender, EventArgs e)
         {
+            KnopDB knopje = new KnopDB();
+            knopje.new_entry(DateTime.UtcNow.ToString());
             await Navigation.PushAsync(new SignUpPage());
         }
     }
